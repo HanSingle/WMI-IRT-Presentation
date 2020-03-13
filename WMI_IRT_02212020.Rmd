@@ -41,8 +41,8 @@ library(ggExtra)
 
 ```{r data, include = FALSE}
 
-# Draheim et al. (2018) Study 1 Dataset, this is a subset with only the complete data of item-level SymSpan, item-level OSpan, and fluid Z scores.
-Dra1R <- read_xlsx("C:/Users/henry/Google Drive/IRT/Dreheimetal/Dreheimetal_dataset.xlsx", sheet = 1)[-1,]
+# Draheim et al. (2018) Study 1 Dataset, this is a subset with only the complete data of item-level SymSpan, item-level OSpan, and fluid Z scores. Datasets were not provided.
+Dra1R <- read_xlsx("somedata.xlsx", sheet = 1)[-1,]
 
 Dra <- Dra1R %>%
   dplyr::select(ZFluid = `Fluid Intelligence Z-score`, # Renaming and selecting standard fluid intelligence score
@@ -66,9 +66,9 @@ Dra <- Dra1R %>%
 Dra_matrix <- as.matrix(Dra)[,-c(1:3)] # mirt function only takes matrices
 
 # Conway et al. (2019) Data
-wmir <- read.csv("C:/Users/henry/Google Drive/IRT/WMIIRT/WMI_Read_Han_wide.csv")[,-1]
-wmirot <- read.csv("C:/Users/henry/Google Drive/IRT/WMIIRT/WMI_Rot_Han_wide.csv")[,-1]
-Raven <- read.csv("C:/Users/henry/Google Drive/IRT/WMIIRT/Ravensdata.csv") %>% 
+wmir <- read.csv("Someotherdata.csv")[,-1]
+wmirot <- read.csv("Moredata.csv")[,-1]
+Raven <- read.csv("Evenmoredata.csv") %>% 
   dplyr::select(Subject = ID, GF) # The Raven's Scores are now standardized.
 
 # Wmi is the full dataset (N = 261)
